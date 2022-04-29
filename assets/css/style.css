@@ -20,7 +20,7 @@ font & reset css
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
 @font-face{
-  font-family: 'Thais-Refular'; 
+  font-family: 'Thais-Regular'; 
   src: url('../fonts/Thais-Regular.ttf');
 }
 /* 
@@ -797,7 +797,6 @@ skills
 PROJECTS
 --------------------------------------------
 */
-
 .right-image-decor {
   background-image: url(../images/right-decor.png);
   background-repeat: no-repeat;
@@ -821,11 +820,18 @@ PROJECTS
 
 #projects .item .project-content {
   background: #a2c9f1;
-  background: linear-gradient(145deg, #a2f1c9 0%, #a2c9f1 100%);
+  /* background-image: linear-gradient(145deg, #a2f1c9 0%, #a2c9f1 100%); */
   margin-left: 60px;
   padding: 40px 30px;
   text-align: center;
   border-radius: 5px;
+  /* transition: all 1s ease-in; */
+}
+
+#projects .item .project-content:hover{
+  /* transition: 0.6s;*/
+  background-image: linear-gradient(180deg, #a2c9f1 0%, #a2f1c9 100%); 
+  transition: #a2c9f1 3s,  3s;
 }
 
 #projects .item .project-content ul li {
@@ -900,6 +906,129 @@ PROJECTS
 @media screen and (max-width: 1060px) {
   .owl-carousel .owl-nav {
     display: none!important;
+  }
+}
+
+/*
+--------------------------------------------
+PROJECTS 2
+--------------------------------------------
+*/
+.right-image-decor {
+  background-image: url(../images/right-decor.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  height: 110%;
+  margin-top: -200px;
+}
+
+#projects2 {
+  padding-top: 100px;
+  position: relative;
+  z-index: 9;
+}
+
+#projects2 em{
+  color: #a2c9f1;
+}
+
+#projects2 .item {
+  position: relative;
+}
+
+#projects2 .item .project-content {
+  background: #f1a2a2;
+  /* background: linear-gradient(145deg, #a2a2f1bb 0%, #f1a2a2ad 50%); */
+  margin-left: 60px;
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#projects2 .item .project-content:hover {
+  background-image: linear-gradient(180deg, #f1a2a2ad 0%, #a2a2f1bb 100%); 
+}
+
+
+#projects2 .item .project-content ul li {
+  display: inline-block;
+  margin: 0px 1px;
+}
+
+#projects2 .item .project-content ul li i {
+  color: #fff;
+  font-size: 20px;
+}
+
+#projects2 .item .project-content h4 {
+  font-size: 50px;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.644);
+}
+
+#projects2 .item .project-content p {
+  color: rgba(0, 0, 0, 0.644);
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 200;
+  margin: 20px 0px 15px 0px;
+}
+
+#projects2 .item .project-content span {
+  color: rgba(0, 0, 0, 0.774);
+  font-weight: 200;
+  font-size: 23px;
+}
+
+#projects2 .author img {
+  max-width: 180px;
+  margin-bottom: -30px;
+}
+
+#projects2 .owl-carousel .owl-nav button.owl-next span {
+  z-index: 10;
+  top: 45%;
+  border-radius: 10px;
+  font-size: 80px;
+  color: #fff;
+  right: -210px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  display: inline-block;
+  background: rgb(244,129,63);
+  background: linear-gradient(145deg, rgba(0,0,0,0) 10%, #a2f1c9 100%);
+  position: absolute;
+}
+
+#projects2 .owl-carousel .owl-nav button.owl-prev span {
+  z-index: 9;
+  top: 30%;
+  border-radius: 10px;
+  font-size: 80px;
+  color: #fff;
+  right: -150px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  display: inline-block;
+  background: rgb(244,129,63);
+  background: linear-gradient(145deg, rgba(0,0,0,0) 10%, #a2f1c9 100%);
+  position: absolute;
+}
+
+@media screen and (max-width: 1060px) {
+  .owl-carousel .owl-nav {
+    display: none!important;
+  }
+  #projects2 .author img {
+    max-width: 120px;
+    margin-bottom: -60px;
   }
 }
 
