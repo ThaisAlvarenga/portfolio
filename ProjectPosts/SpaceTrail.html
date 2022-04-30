@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SPACE TRAIL!</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5e5ed077-97d3-4e1b-b38b-65573c27a60d" class="page sans"><header><h1 class="page-title">SPACE TRAIL! Our beautiful, Out Of This World final project</h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"></span>Languages</th><td><span class="selected-value select-value-color-yellow">Arduino</span><span class="selected-value select-value-color-default">Processing Java</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"></span>Materials</th><td><span class="selected-value select-value-color-yellow">Arduino UNO</span><span class="selected-value select-value-color-yellow">Computer</span><span class="selected-value select-value-color-red">DC Motors</span><span class="selected-value select-value-color-purple">LEDs</span><span class="selected-value select-value-color-blue">Sparkfun Kit</span></td></tr><tr class="property-row property-row-multi_select"><td></td></tr></tbody></table></header><div class="page-body"><p id="1b6de3e0-f253-4dba-9195-710cb29b31ce" class=""><strong>Participants</strong>: Armaan Agrawal, Thais Alvarenga</p><h1 id="ec11cb3a-cfa1-49e0-8339-e3d316bb5add" class="block-color-purple_background">Description</h1><p id="eddfa71e-559c-4fc2-a98c-20f164712d45" class="">SpaceTrail is a game in which the user plays as a Space Artist by piloting a spacecraft along the screen and paint in a myriad of colors (different shades of blue, yellow, green red and a combination of all). The color of that the player is using is displayed on the Arduino spaceship through the LED lights, each lighting up in accordance the user input (except for the multicolor, which lights up all the lights).</p><p id="24a5e58f-ab57-425b-9689-282011a77a37" class="">But there&#x27;s a trick to this game though: the player have their eyes on the spacecraft and the spacecraft only since if you were actually piloting a ship, you wouldn&#x27;t be able to see the trail you leave behind.</p><p id="af72fca8-212a-4630-aa58-5a571d634878" class="">The spacecraft and menu are maneuvered through a PSP Controller which gets the user input and passes it to Processing and Arduino in order to move the spacecraft on the physical world and at the same time create the artwork on the screen.</p><p id="830bc721-4636-4e04-be9d-0c0142848549" class="">Once the player feels like they are done with their work, they can save it by pressing the SAVE button on the controller, which will locate the sketch on a folder within the program called &quot;drawings&quot;.</p><h1 id="12b5f05c-f1f0-48ec-9647-bce7ba40d73c" class="block-color-blue_background">Process</h1><h3 id="50064416-85b5-4d40-b093-5ff342eb8bb3" class="block-color-gray_background">Idea:</h3><p id="b8a53ce2-49c1-4a6b-9297-f348f6d39e4b" class="">We had originally planned to make a car track simulator, however, we wanted to make something more creative and, whilst thinking of how we could incorporate the progress we had made previously (been able to get inputs from a controller using two special libraries in Processing and a Windows computer) to make something a little more spicy.</p><p id="6634315f-07e1-414e-9299-d881388877c5" class="">Armaan came up with the idea of using the car we created as a means to create art. Meanwhile, I wanted to leave the spatial intelligence test element in the project and alas, we came up with SpaceTrail.</p><p id="20359b29-62e2-4595-975b-a07aece41592" class="">We are extremely proud of our work. However, we did have to make a deal with the devil and sacrifice various campus cats (and our own sanity) to have this project ready.</p><h3 id="b87e9717-35f1-4957-a359-02d87ee17b4a" class="block-color-gray_background">Arduino and Serial Communication</h3><p id="03e4b66e-0d64-4877-a1a4-c98839fd5b64" class="">Besides time consuming (to say the least) this project was also extremely painful and required a lot of trial and error, debugging and scratching out ideas to come up with new ones that actually worked. Though we had already made the controls for the car, which would be translated into the spaceship, we had a lot of problems with the serial communication, to the point were we had to re-think the type of input we wanted to get from the controller. We originally wanted to use the joystick as the input for the car movement (left, right, forward and backwards). Nonetheless, since this value had to be mapped, it decreased the speed of the car significantly as it took some time for the new values to reach the Arduino. Furthermore, the button states gave integers of 8 and 0 instead of the designated 1 and 0 booleans that configuration stated which affected the serial communication. Armaan was able to fix this by  using the integers are the constrains for the conditions and the serial communication;. He spent two whole days (and most of the night) figuring out how to fix the problems we were having with the serial communication, I can attest.</p><p id="2acb1aa4-fc64-4e42-84c3-0a8ed3c53acb" class="">A great part of our time was concentrated around the serial communication between processing and Arduino (specially after the LED light were incorporated in our model). It was very frustrating because one day the spaceship would be working perfectly, just for it to state (the next day) that it was having issues with variables sent by processing. Additionally, placing in the motors with the wheels was very difficult as the tape would sometimes fail and the wheel would go to the side, thus making movement harder. We solved it by adding an insane amount of 3M tape. It worked out at the end.</p><p id="5f711157-3ff3-4e98-a52f-b68d4c3a8aff" class="">This is a video of Armaan placing the inputs of the controller to control the lights.</p><figure id="704d14b0-6929-430a-ba51-1c06a603e015"><div class="source"><a href="https://youtu.be/q7TI5hV2XUs">https://youtu.be/q7TI5hV2XUs</a></div></figure><p id="cd22feff-9be9-4aa5-8b19-a75aec27e9b3" class="">This is a video of how the car was working after adding the LED&#x27;s</p><figure id="b3362267-a5ca-4d65-be3e-b35c418288bd"><div class="source"><a href="https://youtu.be/Us7HPzEScps">https://youtu.be/Us7HPzEScps</a></div></figure><p id="fb931609-cbc4-435f-862c-e8446bd345cb" class="">Armaan&#x27;s hard work paid off because afterwards, we never had a problem with the serial communication (unless it was something like forgetting to plug in the Arduino Port).</p><h3 id="63373179-7d23-45f5-a180-d808d9ff6fec" class="block-color-gray_background">Processing</h3><p id="b052f913-42ad-4859-a8e7-3e01904b5135" class="">For the processing, we created a stroke object that would be part of an array list that conformed the brush/trail of the spacecraft. Making the controls for the red, blue, green and multicolored options was not that difficult, however the yellow required more thinking since it is a combination of rgb colors.</p><p id="9ad6a4e8-f93e-440d-bd43-23113311e03a" class="">This is a video of how they looked at the beginning.</p><figure id="fc3a304d-cbf1-4ed7-a731-d7197b4613b0"><div class="source"><a href="https://youtu.be/z6MIonqlpOA">https://youtu.be/z6MIonqlpOA</a></div></figure><p id="9d4870cc-9a26-4fd3-872e-73c36d4ba5f8" class="">We played around some more with the shapes, and once we were happy, we started working on a background that would represent the space theme of our project.</p><p id="7ad103b5-349b-4205-8212-65421baad517" class="">This is how it looked like:</p><figure id="cb603bd0-a274-4173-91a6-fb3e9a13364c"><div class="source"><a href="https://youtu.be/jERh0mm9_JY">https://youtu.be/jERh0mm9_JY</a></div></figure><p id="0810584c-4bf2-4d38-a0f9-775475978fba" class="">We also changed things from this, like the color and the amount of stars. This became the background of our whole game.</p><p id="4e993d8b-4886-4d3e-ba5d-6fe2cb140d01" class="">We incorporated this background with the paint brush sketch to make this:</p><figure id="ea5f916b-3353-499f-bf2f-b63d362e75ac"><div class="source"><a href="https://youtu.be/Pl-g1lDo6Zw">https://youtu.be/Pl-g1lDo6Zw</a></div></figure><p id="516cb0a1-eaac-414f-aa79-90a74e95ab77" class="">We also included commands to save the drawing and clear the sketch to start a new one.</p><figure id="cb061396-1ac1-4fb2-bc0a-f0eca5206a8b" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-11.55.22-AM-300x169.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-11.55.22-AM-300x169.png"/></a></figure><p id="21d9d12f-5e4c-48a1-b783-88a62ac1c405" class="">To save the sketches without erasing the previous one, we create a table that save the number of the sketch, reloads it into the program when the game starts and adds one, to keep count of each sketch and be able to save them in the drawing folder.</p><p id="1b1d6195-4e86-42ef-8b8a-fe62ddb9ed1d" class="">We then added the commands for the spaceship to move around leaving a trail. This was very hard, specially because the movement of the spacecraft had to have the same logic as the one that Arduino used to command the motors of the spacecraft. It took Thais a lot of time. Indeed, too much time one could say. But alas, we made it. Thais was so tired however, because she didn&#x27;t had suhoor and it was already 5am, that she forgot to record this part. Shame on her.</p><p id="2d92be91-23f3-4917-910f-70608fa2bbf8" class="">We then combined both the Arduino and the Processing parts to create our functioning game!</p><figure id="983ab49e-8597-4112-8eb1-0b68aa43a27f"><div class="source"><a href="https://youtu.be/dEhB1KXMV1Y">https://youtu.be/dEhB1KXMV1Y</a></div></figure><p id="8fb0f51d-8160-41c1-b002-df7cdcb4101f" class="">We were so proud of our little guy. He was already drawing. They grow up so fast ;-;</p><p id="ee0a05cc-6244-4b55-80c8-7edb87e960c1" class="">That day we even changed its first wheels. 😭</p><h3 id="0a38eb7a-c319-4913-8d5e-e68d41b88205" class="block-color-gray_background">The Menu</h3><p id="11a2d401-a1cd-4d38-a30f-1c6213fc9009" class="">The menu was another very time consuming, but extremely satisfying element of our project. Thais designed the UI for the menu while Armaan place everything and created the logic for the transitions.</p><p id="9ae04560-a244-4076-8a5f-2fa7ef68828f" class="">We also created a character named O.L.B.A.P, a space artist that would introduce the user to how the game works and what a space artist does.</p><p id="6329170d-08d4-44f6-80f8-5ab1978f1dee" class="">This is some of the UI used:</p><figure id="649d743c-9aa2-4ec4-9140-803bc2d24fd4" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5FFB93FFF0EA-1.jpeg"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5FFB93FFF0EA-1.jpeg"/></a></figure><p id="af9b084f-e7cf-4971-a78a-49663da8d700" class="">Play UI Button</p><p id="b2926720-3c74-4461-9ca5-ac7ca8c88c7a" class="">Exit Button HoverCharacter Information Button HoverController Instruction Button Hover</p><figure id="70fa1e99-a601-42de-9686-01973d21076b" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5530.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5530.png"/></a></figure><figure id="3f8cd6f7-d817-44bc-91ec-1e5818b84405" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5531.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5531.png"/></a></figure><figure id="fd366d44-1ec0-44ca-93ab-50369cf8bad8" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5532.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5532.png"/></a></figure><figure id="86dcb7ab-9317-4a6a-b75f-a813e6fc4efe" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5533-300x231.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/IMG_5533-300x231.png"/></a></figure><p id="19167a67-434e-4759-b48f-7e6ba71281eb" class="">Controller UI for instructions page</p><p id="5d0e3b4d-2784-4ce3-b872-44d16d81b5f9" class="">We worked on various versions of the UI and their location in order to make the interface as aesthetic and welcoming as possible. For this, we tried multiple fonts, colors, hover elements and text frames.</p><p id="8cef6060-791e-425c-973d-a2f19333a5bf" class="">The main menu ended up looking like this:</p><figure id="d6066c38-05c7-4242-bfff-a43621f94095" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-132-300x169.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-132-300x169.png"/></a></figure><p id="91a3e5b0-b5c1-4974-8451-cbe635dfa8bd" class="">This is the character information page:</p><figure id="1a97c714-da9d-4740-882e-5cd4af08a2b1" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-133-300x169.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-133-300x169.png"/></a></figure><p id="fc26143a-d938-440b-8b10-d9e2dfd98342" class="">Controller Instructions Page</p><figure id="41cb842e-b88a-427d-b86c-0a1b094556b3" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-134-300x169.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-134-300x169.png"/></a></figure><p id="62ced2ad-1ace-4689-963d-f1e716755023" class="">Exit Page</p><figure id="e7639a5e-9c2c-40df-af53-9a7f298d7f32" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-135-1-300x169.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screenshot-135-1-300x169.png"/></a></figure><p id="c0faad83-7afb-4991-8060-1caac0cf6e1b" class="">This is the test for the main menu:</p><figure id="670bdce9-6a58-48d5-945d-aae81a32caa4"><div class="source"><a href="https://youtu.be/kjaE8krdEDk">https://youtu.be/kjaE8krdEDk</a></div></figure><p id="d30c2a07-7eeb-4afc-93c6-ea79aff8d6e7" class="">Thais made this attempt to dress our little spacecraft with cardboard. However, we ended up discarding this design because the tape tampered with the motors, but we&#x27;ll put the image here so that you can laugh at this sad attempt of a spaceship. We even put stickers to it!</p><figure id="9677e28c-fd26-4f60-8760-fd595876966f" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-12.30.38-PM-300x292.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-12.30.38-PM-300x292.png"/></a></figure><h2 id="e0a8d597-9fac-43e4-9c3a-97e80c7a5497" class="block-color-purple_background">Final Product</h2><p id="fa1541be-5aa4-41f9-8959-827fa760408e" class="">Here we have a demo of our project, explained by my amazing partner Armaan.</p><figure id="9167b5ed-b82f-4b0d-93c4-3a602a2c4cc4"><div class="source"><a href="https://youtu.be/LeiY9J8NR1E">https://youtu.be/LeiY9J8NR1E</a></div></figure><p id="6a7ea04e-b49e-487e-be82-50c562cfec91" class=""><a href="https://www.notion.so/Final-Notes-b013a1ba19a4439a9d9836da5b183881">This is a link to our Notion page</a> were we have the references we used, the minutes of some of our meetings, a few images that we used as inspiration, as well as the several versions of our code.</p><p id="11829733-aae3-4c46-b300-73e09225f03a" class="">On the other hand this is a<a href="https://github.com/Armaan-Agrawal/Intro_To_IM_Final"> link to our final version of the code in GitHub</a>.</p><h3 id="bcb1d8dc-41d3-4bd6-be7d-7233c3795e0d" class="block-color-blue_background">Arduino Circuits</h3><p id="c625df64-39e8-4f32-a4b1-e160401cfd64" class="">Motor:</p><figure id="f3789820-462b-429b-83aa-ad6f907be14e" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2020/11/sparkfunMotorDriver-300x180.jpg"><img src="https://intro.nyuadim.com/wp-content/uploads/2020/11/sparkfunMotorDriver-300x180.jpg"/></a></figure><p id="1910e1c5-2ef9-4c24-a9db-320bc344ce09" class="">LED&#x27;s</p><figure id="44861c06-8a5c-4829-b247-e0c277a57ccc" class="image"><a href="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-1.11.10-PM-300x192.png"><img src="https://intro.nyuadim.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-03-at-1.11.10-PM-300x192.png"/></a></figure><p id="19d28569-1cd2-4d0f-9425-bebbeed9a1d4" class="">Thank you so much!</p></div>
+	<section>
+		<div class="content">
+			<button><a href="../index.html" class="button primary large">Back </a></button>
+				
+		</div>
+	</section>
+
+</article></body></html>
