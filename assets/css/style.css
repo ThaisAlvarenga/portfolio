@@ -991,8 +991,8 @@ PROJECTS 2
 }
 
 #projects2 .author img {
-  max-width: 180px;
-  margin-bottom: -30px;
+  max-width: 120px;
+  margin-bottom: -60px;
 }
 
 #projects2 .owl-carousel .owl-nav button.owl-next span {
